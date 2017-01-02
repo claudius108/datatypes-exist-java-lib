@@ -25,8 +25,8 @@
 	<dependencies>
 		<dependency>
 			<groupId>ro.kuberam.libs.java</groupId>
-			<artifactId>datatypes</artifactId>
-			<version>0.0.1</version>
+			<artifactId>xml-datatypes</artifactId>
+			<version>0.0.2</version>
 			<scope>provided</scope>
 			<type>jar</type>
 		</dependency>
