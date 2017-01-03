@@ -28,7 +28,7 @@ public class Base64Binary extends BasicFunction {
 
 	public final static FunctionSignature signature = new FunctionSignature(
 			new QName("base64Binary-to-byte", ModuleDescription.NAMESPACE_URI, ModuleDescription.PREFIX),
-			"Converts the xs:base64Binary input data to byte*.",
+			"Converts the xs:base64Binary input data to xs:byte*.",
 			new SequenceType[] { new FunctionParameterSequenceType("data", Type.ATOMIC, Cardinality.ZERO_OR_MORE,
 					"The xs:base64Binary data to be converted. This parameter can be of type xs:base64Binary, or base64Binary xs:string.") },
 			new FunctionReturnSequenceType(Type.BYTE, Cardinality.ZERO_OR_MORE, "converted data, as xs:byte*."));
@@ -47,7 +47,6 @@ public class Base64Binary extends BasicFunction {
 		logger.debug("resultBytesLength = " + resultBytesLength);
 		logger.debug("resultBytes = " + Arrays.toString(resultBytes));
 
-		// result = new ValueSequence();
 		for (int i = 0, il = resultBytesLength; i < il; i++) {
 			result.add(new IntegerValue(resultBytes[i]));
 		}
@@ -60,6 +59,7 @@ public class Base64Binary extends BasicFunction {
 
 		try {
 			final int itemType = sequence.itemAt(0).getType();
+			logger.debug("itemTypeName = " + Type.getTypeName(itemType));
 
 			switch (itemType) {
 			case Type.STRING:
@@ -75,6 +75,7 @@ public class Base64Binary extends BasicFunction {
 		} catch (Exception ex) {
 			throw new XPathException(ex.getMessage());
 		}
+		logger.debug("result = " + Arrays.toString(result));
 
 		return result;
 	}
