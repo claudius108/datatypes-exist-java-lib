@@ -14,12 +14,15 @@
 	<artifactId>datatypes</artifactId>
 	<version>0.0.1</version>
 	<name>eXist wrapper for EXPath Datatypes library</name>
-	<url>http://expath.org</url>
+	<url>http://kuberam.ro/specs/expath/datatypes/datatypes.html</url>
 
 	<properties>
 		<java-package-name>datatypes</java-package-name>
 		<java-package-main-class-name>ExistExpathDatatypesModule</java-package-main-class-name>
 		<module-prefix>${java-package-name}</module-prefix>
+		<package-title>EXPath Datatypes Module Implementation</package-title>
+		<package-name>http://expath.org/ns/${project.artifactId}</package-name>
+		<package-abbrev>expath-${project.artifactId}-exist-lib</package-abbrev>
 	</properties>
 
 	<dependencies>
@@ -37,6 +40,24 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>ro.kuberam.maven.plugins</groupId>
+				<artifactId>kuberam-expath-plugin</artifactId>
+				<version>0.4.6</version>
+				<executions>
+					<execution>
+						<id>create-xar</id>
+						<phase>package</phase>
+						<goals>
+							<goal>make-xar</goal>
+						</goals>
+						<configuration>
+							<descriptor>assembly.xml</descriptor>
+							<finalName>${package-final-name}</finalName>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
