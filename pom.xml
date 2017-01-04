@@ -8,7 +8,7 @@
 	<parent>
 		<groupId>org.expath.exist</groupId>
 		<artifactId>base</artifactId>
-		<version>1.1</version>
+		<version>1.2.0</version>
 	</parent>
 
 	<artifactId>datatypes</artifactId>
@@ -45,20 +45,6 @@
 			<plugin>
 				<groupId>ro.kuberam.maven.plugins</groupId>
 				<artifactId>kuberam-expath-plugin</artifactId>
-				<version>0.4.6</version>
-				<executions>
-					<execution>
-						<id>create-xar</id>
-						<phase>package</phase>
-						<goals>
-							<goal>make-xar</goal>
-						</goals>
-						<configuration>
-							<descriptor>assembly.xml</descriptor>
-							<finalName>${package-final-name}</finalName>
-						</configuration>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 	</build>

@@ -18,7 +18,7 @@
 		<dependencySet>
 			<groupId>org.expath.exist</groupId>
 			<artifactId>datatypes</artifactId>
-			<version>0.0.1</version>
+			<version>${project.version}</version>
 			<outputFileNameMapping>datatypes-exist-java-lib.jar</outputFileNameMapping>
 		</dependencySet>
 		<dependencySet>
