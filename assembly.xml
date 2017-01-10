@@ -1,5 +1,5 @@
-<package xmlns="http://expath.org/ns/pkg" name="${package-name}"
-	abbrev="${package-abbrev}" version="${project.version}" spec="1.0">
+<package xmlns="http://expath.org/ns/pkg" name="${package-name}" abbrev="${package-abbrev}" version="${project.version}"
+	spec="1.0">
 	<title>${package-title}</title>
 	<author id="cteodorescu">Claudius Teodorescu</author>
 	<website>${project.url}</website>
@@ -24,9 +24,8 @@
 		<dependencySet>
 			<groupId>ro.kuberam.libs.java</groupId>
 			<artifactId>xml-datatypes</artifactId>
-			<version>0.0.2</version>
-			<outputFileNameMapping>xml-datatypes-java-lib.jar
-			</outputFileNameMapping>
+			<version>${java-lib-version}</version>
+			<outputFileNameMapping>xml-datatypes-java-lib.jar</outputFileNameMapping>
 		</dependencySet>
 	</dependencySets>
 </package>
