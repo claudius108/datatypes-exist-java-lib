@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
-<project
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
 	<modelVersion>4.0.0</modelVersion>
@@ -8,14 +7,23 @@
 	<parent>
 		<groupId>ro.kuberam.expath.exist</groupId>
 		<artifactId>base</artifactId>
-		<version>1.5.1</version>
+		<version>1.5.3</version>
 	</parent>
 
 	<artifactId>datatypes</artifactId>
 	<version>0.0.1</version>
-	<name>eXist wrapper for EXPath Datatypes library</name>
+	<name>eXist-db EXPath Datatypes library</name>
+	<description>eXist-db wrapper for EXPath Datatypes Java library</description>
 	<url>http://kuberam.ro/specs/expath/datatypes/datatypes.html</url>
-
+	<inceptionYear>2016</inceptionYear>
+	<licenses>
+		<license>
+			<name>GNU Lesser General Public License version 2.1</name>
+			<url>https://opensource.org/licenses/LGPL-2.1</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	
 	<properties>
 		<java-package-name>datatypes</java-package-name>
 		<java-package-main-class-name>ExistExpathDatatypesModule</java-package-main-class-name>
@@ -39,6 +47,10 @@
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
