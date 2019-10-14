@@ -11,7 +11,7 @@
 	</parent>
 
 	<artifactId>datatypes</artifactId>
-	<version>0.1.0</version>
+	<version>0.2.0</version>
 	<name>eXist-db EXPath Datatypes library</name>
 	<description>eXist-db wrapper for EXPath Datatypes Java library</description>
 	<url>http://kuberam.ro/specs/expath/datatypes/datatypes.html</url>
@@ -30,6 +30,10 @@
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.exist-db</groupId>
+			<artifactId>exist-core</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>ro.kuberam.libs.java</groupId>
 			<artifactId>xml-datatypes</artifactId>

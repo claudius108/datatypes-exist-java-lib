@@ -4,7 +4,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.exist.dom.QName;
 import org.exist.xquery.BasicFunction;
 import org.exist.xquery.Cardinality;
@@ -24,7 +25,7 @@ import ro.kuberam.libs.java.xmlDatatypes.ModuleDescription;
 
 public class Base64Binary extends BasicFunction {
 
-	private final static Logger logger = Logger.getLogger(Base64Binary.class);
+	private final static Logger log = LogManager.getLogger(Base64Binary.class);
 
 	public final static FunctionSignature signature = new FunctionSignature(
 			new QName("base64Binary-to-byte", ModuleDescription.NAMESPACE_URI, ModuleDescription.PREFIX),
@@ -44,8 +45,8 @@ public class Base64Binary extends BasicFunction {
 		Sequence data = args[0];
 		byte[] resultBytes = sequence2byteArray(data);
 		int resultBytesLength = resultBytes.length;
-		logger.debug("resultBytesLength = " + resultBytesLength);
-		logger.debug("resultBytes = " + Arrays.toString(resultBytes));
+		log.debug("resultBytesLength = " + resultBytesLength);
+		log.debug("resultBytes = " + Arrays.toString(resultBytes));
 
 		for (int i = 0, il = resultBytesLength; i < il; i++) {
 			result.add(new IntegerValue(resultBytes[i]));
@@ -59,7 +60,7 @@ public class Base64Binary extends BasicFunction {
 
 		try {
 			final int itemType = sequence.itemAt(0).getType();
-			logger.debug("itemTypeName = " + Type.getTypeName(itemType));
+			log.debug("itemTypeName = " + Type.getTypeName(itemType));
 
 			switch (itemType) {
 			case Type.STRING:
@@ -75,7 +76,7 @@ public class Base64Binary extends BasicFunction {
 		} catch (Exception ex) {
 			throw new XPathException(ex.getMessage());
 		}
-		logger.debug("result = " + Arrays.toString(result));
+		log.debug("result = " + Arrays.toString(result));
 
 		return result;
 	}
