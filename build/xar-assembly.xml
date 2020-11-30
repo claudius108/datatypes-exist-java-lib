@@ -19,15 +19,13 @@
 			<groupId>${project.groupId}</groupId>
 			<artifactId>${project.artifactId}</artifactId>
 			<version>${project.version}</version>
-			<outputFileNameMapping>${project.artifactId}-exist-java-lib-${project.version}.jar
-			</outputFileNameMapping>
+			<outputFileNameMapping>${project.artifactId}-exist-java-lib-${project.version}.jar</outputFileNameMapping>
 		</dependencySet>
 		<dependencySet>
 			<groupId>ro.kuberam.libs.java</groupId>
 			<artifactId>xml-${project.artifactId}</artifactId>
 			<version>${java.lib.version}</version>
-			<outputFileNameMapping>xml-${project.artifactId}-java-lib-${java.lib.version}.jar
-			</outputFileNameMapping>
+			<outputFileNameMapping>xml-${project.artifactId}-java-lib-${java.lib.version}.jar</outputFileNameMapping>
 		</dependencySet>
 	</dependencySets>
 </package>
